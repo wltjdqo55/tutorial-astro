@@ -1,8 +1,9 @@
 ---
 
 import '../styles/global.css';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-const pageTitle = "About Me";
+const pageTitle = "... and my new Astro site!";
 const identity = {
     firstName: "Sarah",
     country: "Canada",
@@ -37,12 +38,7 @@ const fontWeight = "bold";
         </style>
     </head>
     <body>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
-        <h1>{pageTitle}</h1>
-        <h2>... and my new Astro site!</h2>
-
+        <BaseLayout pageTitle={pageTitle}>
         <p>
             I am working through Astro's introductory tutorial. This is the
             second page on my website, and it's the first one I built myself!
@@ -86,5 +82,9 @@ const fontWeight = "bold";
                 <p>My goal is not 3 days.</p>
             )
         }
+        </BaseLayout>
+        <script>
+            import "../scripts/menu.js";
+        </script>
     </body>
 </html>
